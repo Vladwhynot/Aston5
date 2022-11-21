@@ -11,15 +11,23 @@
         android:id="@+id/cardOne"
         >
         <TextView
-            android:text="Vlad One"
+            android:text="Vlad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="26dp"
             android:id="@+id/text1"
             />
+        <TextView
+            android:text="One"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="26dp"
+            android:id="@+id/text111"
+            android:paddingTop="25dp"
+            />
 
         <TextView
-            android:paddingTop="30dp"
+            android:paddingTop="50dp"
             android:text="+37544712960"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,9 +49,17 @@
             android:textSize="26dp"
             android:id="@+id/text2"
             />
+        <TextView
+            android:text="Two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="26dp"
+            android:id="@+id/text222"
+            android:paddingTop="25dp"
+            />
 
         <TextView
-            android:paddingTop="30dp"
+            android:paddingTop="50dp"
             android:text="+3754474532"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,15 +76,22 @@
         android:id="@+id/cardThree"
         >
         <TextView
-            android:text="Vlad Three"
+            android:text="Vlad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="26dp"
             android:id="@+id/text3"
             />
-
         <TextView
-            android:paddingTop="30dp"
+            android:text="Three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="26dp"
+            android:id="@+id/text333"
+            android:paddingTop="25dp"
+            />
+        <TextView
+            android:paddingTop="50dp"
             android:text="+231447996960"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,15 +107,23 @@
         android:id="@+id/cardFour"
         >
         <TextView
-            android:text="Vlad Four"
+            android:text="Vlad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="26dp"
             android:id="@+id/text4"
             />
+        <TextView
+            android:text="Four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="26dp"
+            android:id="@+id/text444"
+            android:paddingTop="25dp"
+            />
 
         <TextView
-            android:paddingTop="30dp"
+            android:paddingTop="50dp"
             android:text="+111447996960"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

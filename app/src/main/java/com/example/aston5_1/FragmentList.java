@@ -33,6 +33,11 @@ public class FragmentList extends Fragment {
     TextView text22;
     TextView text33;
     TextView text44;
+    TextView text111;
+    TextView text222;
+    TextView text333;
+    TextView text444;
+
     int numbers;
 
     @Nullable
@@ -52,6 +57,10 @@ public class FragmentList extends Fragment {
         text22 = (TextView) view.findViewById(R.id.text22);
         text33 = (TextView) view.findViewById(R.id.text33);
         text44 = (TextView) view.findViewById(R.id.text44);
+        text111 = (TextView) view.findViewById(R.id.text111);
+        text222 = (TextView) view.findViewById(R.id.text222);
+        text333 = (TextView) view.findViewById(R.id.text333);
+        text444 = (TextView) view.findViewById(R.id.text444);
 
 
 
@@ -62,7 +71,7 @@ public class FragmentList extends Fragment {
            @Override
            public void onClick(View view) {
                replaceFragment();
-               manager(text1.getText().toString(),text11.getText().toString(),1);
+               manager(text1.getText().toString(),text11.getText().toString(),1,text111.getText().toString());
            }
        });
 
@@ -70,7 +79,7 @@ public class FragmentList extends Fragment {
             @Override
             public void onClick(View view) {
                 replaceFragment();
-                manager(text2.getText().toString(),text22.getText().toString(),2);
+                manager(text2.getText().toString(),text22.getText().toString(),2,text222.getText().toString());
             }
         });
 
@@ -79,7 +88,7 @@ public class FragmentList extends Fragment {
             @Override
             public void onClick(View view) {
                 replaceFragment();
-                manager(text3.getText().toString(),text33.getText().toString(),3);
+                manager(text3.getText().toString(),text33.getText().toString(),3,text333.getText().toString());
             }
         });
 
@@ -88,7 +97,7 @@ public class FragmentList extends Fragment {
             @Override
             public void onClick(View view) {
                 replaceFragment();
-                manager(text4.getText().toString(),text44.getText().toString(),4);
+                manager(text4.getText().toString(),text44.getText().toString(),4,text444.getText().toString());
             }
         });
         return view;
@@ -102,13 +111,14 @@ public class FragmentList extends Fragment {
         transaction.commit();
     }
 
-     public void manager(String text,String number,int numbers){
+     public void manager(String text,String number,int numbers,String last){
          FragmentManager fm=getFragmentManager();
          FragmentTransaction ft=fm.beginTransaction();
          Bundle args = new Bundle();
          args.putString("CID", text);
          args.putString("C", number);
          args.putInt("ok",numbers);
+         args.putString("last",last);
          fragmentLast.setArguments(args);
          ft.commit();
      }
@@ -122,24 +132,28 @@ public class FragmentList extends Fragment {
             if (getArguments() != null) {
                 text1.setText(getArguments().getString("A"));
                 text11.setText(getArguments().getString("B"));
+                text111.setText(getArguments().getString("D"));
             }
         }
         if (numbers == 2){
             if (getArguments() != null) {
                 text2.setText(getArguments().getString("A").toString());
                 text22.setText(getArguments().getString("B").toString());
+                text222.setText(getArguments().getString("D"));
             }
         }
         if (numbers == 3){
             if (getArguments() != null) {
                 text3.setText(getArguments().getString("A").toString());
                 text33.setText(getArguments().getString("B").toString());
+                text333.setText(getArguments().getString("D"));
             }
         }
         if (numbers == 4){
             if (getArguments() != null) {
                 text4.setText(getArguments().getString("A").toString());
                 text44.setText(getArguments().getString("B").toString());
+                text444.setText(getArguments().getString("D"));
             }
         }
     }

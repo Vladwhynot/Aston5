@@ -10,8 +10,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Фамилия Имя"
+        android:text="Имя"
         android:id="@+id/textName"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Фамилия"
+        android:id="@+id/textLastName"/>
 
     <EditText
         android:layout_width="match_parent"

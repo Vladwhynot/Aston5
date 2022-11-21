@@ -24,6 +24,7 @@ public class FragmentLast extends Fragment {
     EditText textNumber;
     Button button;
     Fragment fragmentList;
+    EditText textLastName;
     int numbers;
     @Nullable
     @Override
@@ -31,11 +32,14 @@ public class FragmentLast extends Fragment {
         View view = inflater.inflate(R.layout.fragment_last, container, false);
         String name = getArguments().getString("CID");
         String number = getArguments().getString("C");
+        String lastname = getArguments().getString("last");
         textName = (EditText) view.findViewById(R.id.textName);
         textNumber = (EditText) view.findViewById(R.id.textNumber);
+        textLastName = (EditText) view.findViewById(R.id.textLastName);
         button = (Button) view.findViewById(R.id.button);
         textName.setText(name);
         textNumber.setText(number);
+        textLastName.setText(lastname);
         fragmentList = new FragmentList();
         numbers = getArguments().getInt("ok");
 
@@ -50,6 +54,7 @@ public class FragmentLast extends Fragment {
                 Bundle argst = new Bundle();
                 argst.putString("A", textName.getText().toString());
                 argst.putString("B", textNumber.getText().toString());
+                argst.putString("D", textLastName.getText().toString());
                 argst.putInt("k",numbers);
                 fragmentList.setArguments(argst);
                 ftt.commit();
