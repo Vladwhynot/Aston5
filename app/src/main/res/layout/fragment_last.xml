@@ -7,17 +7,23 @@
     android:padding="20dp"
     android:orientation="vertical"
     >
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Фамилия Имя"
         android:id="@+id/textName"/>
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Номер"
         android:id="@+id/textNumber"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Обновить"
+        android:id="@+id/button"/>
 
 
 </LinearLayout>

@@ -33,6 +33,7 @@ public class FragmentList extends Fragment {
     TextView text22;
     TextView text33;
     TextView text44;
+    int numbers;
 
     @Nullable
     @Override
@@ -61,7 +62,7 @@ public class FragmentList extends Fragment {
            @Override
            public void onClick(View view) {
                replaceFragment();
-               manager(text1.getText().toString(),text11.getText().toString());
+               manager(text1.getText().toString(),text11.getText().toString(),1);
            }
        });
 
@@ -69,7 +70,7 @@ public class FragmentList extends Fragment {
             @Override
             public void onClick(View view) {
                 replaceFragment();
-                manager(text2.getText().toString(),text22.getText().toString());
+                manager(text2.getText().toString(),text22.getText().toString(),2);
             }
         });
 
@@ -78,7 +79,7 @@ public class FragmentList extends Fragment {
             @Override
             public void onClick(View view) {
                 replaceFragment();
-                manager(text3.getText().toString(),text33.getText().toString());
+                manager(text3.getText().toString(),text33.getText().toString(),3);
             }
         });
 
@@ -87,12 +88,11 @@ public class FragmentList extends Fragment {
             @Override
             public void onClick(View view) {
                 replaceFragment();
-                manager(text4.getText().toString(),text44.getText().toString());
+                manager(text4.getText().toString(),text44.getText().toString(),4);
             }
         });
         return view;
     }
-
 
 
 
@@ -102,17 +102,45 @@ public class FragmentList extends Fragment {
         transaction.commit();
     }
 
-     public void manager(String text,String number){
+     public void manager(String text,String number,int numbers){
          FragmentManager fm=getFragmentManager();
          FragmentTransaction ft=fm.beginTransaction();
          Bundle args = new Bundle();
          args.putString("CID", text);
          args.putString("C", number);
+         args.putInt("ok",numbers);
          fragmentLast.setArguments(args);
          ft.commit();
      }
 
-
-
-
+    @Override
+    public void onStart() {
+        super.onStart();
+         numbers = getArguments() != null ? getArguments().getInt("k") : 0;
+        if (numbers == 1 )
+        {
+            if (getArguments() != null) {
+                text1.setText(getArguments().getString("A"));
+                text11.setText(getArguments().getString("B"));
+            }
+        }
+        if (numbers == 2){
+            if (getArguments() != null) {
+                text2.setText(getArguments().getString("A").toString());
+                text22.setText(getArguments().getString("B").toString());
+            }
+        }
+        if (numbers == 3){
+            if (getArguments() != null) {
+                text3.setText(getArguments().getString("A").toString());
+                text33.setText(getArguments().getString("B").toString());
+            }
+        }
+        if (numbers == 4){
+            if (getArguments() != null) {
+                text4.setText(getArguments().getString("A").toString());
+                text44.setText(getArguments().getString("B").toString());
+            }
+        }
+    }
 }
